@@ -1,0 +1,20 @@
+{
+  "name": "az900-exam-sim",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "AZ-900 Azure Fundamentals exam simulator (React + Vite)",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.5",
+    "vite": "^8.2.0"
+  }
+}
