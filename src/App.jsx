@@ -96,68 +96,68 @@ async function remoteDelete(userId) {
 const BANK = [
   /* ---------- CLOUD CONCEPTS ---------- */
   { id: "c1", domain: "concepts", type: "single",
-    q: "In a cloud consumption-based model, how are you primarily billed?",
-    options: ["A fixed monthly fee regardless of usage", "Only for the resources you actually consume", "A one-off perpetual licence per server", "Per employee who can access the service"],
+    q: "In a consumption-based cloud model, how are charges typically calculated?",
+    options: ["A fixed monthly fee regardless of usage", "Only for the resources that are actually consumed", "A one-time perpetual licence fee per server", "A charge for each user who can access the service"],
     correct: 1,
-    ex: "Consumption-based (pay-as-you-go) billing charges only for what you use, shifting spend from CapEx to OpEx." },
+    ex: "In a consumption-based model, customers pay only for the resources they use, which shifts spending from capital expenditure to operating expenditure." },
   { id: "c2", domain: "concepts", type: "single",
-    q: "Which term describes automatically adding or removing resources to match changing demand?",
+    q: "Which term describes the ability to automatically add or remove resources to meet changing demand?",
     options: ["High availability", "Elasticity", "Disaster recovery", "Fault tolerance"],
     correct: 1,
-    ex: "Elasticity scales resources dynamically with load. Scalability is the broader capacity to grow." },
+    ex: "Elasticity refers to the ability to scale resources dynamically in response to changing demand." },
   { id: "c3", domain: "concepts", type: "single",
     q: "Purchasing physical servers for your own datacentre is an example of which spending type?",
     options: ["Operational expenditure (OpEx)", "Capital expenditure (CapEx)", "Consumption expenditure", "Elastic expenditure"],
     correct: 1,
     ex: "CapEx is upfront investment in physical assets. Cloud shifts this to usage-based OpEx." },
   { id: "c4", domain: "concepts", type: "single",
-    q: "Which cloud service model gives you the MOST control over the operating system?",
+    q: "Which cloud service model gives you the greatest level of control over the operating system?",
     options: ["SaaS", "PaaS", "IaaS", "FaaS"],
     correct: 2,
-    ex: "IaaS (e.g. Azure VMs) hands you the OS, runtime and apps. PaaS abstracts the OS; SaaS abstracts almost everything." },
+    ex: "Infrastructure as a Service provides the greatest control over the operating system, middleware, and applications. Platform as a Service abstracts the operating system, while Software as a Service abstracts most of the underlying infrastructure." },
   { id: "c5", domain: "concepts", type: "single",
-    q: "Microsoft 365 and Dynamics 365 are examples of which model?",
+    q: "Which cloud service model is used by Microsoft 365 and Dynamics 365?",
     options: ["IaaS", "PaaS", "SaaS", "Hybrid"],
     correct: 2,
-    ex: "SaaS delivers finished software over the internet; the provider manages everything below the application." },
+    ex: "Microsoft 365 and Dynamics 365 are examples of Software as a Service, where the provider manages the underlying infrastructure and platform." },
   { id: "c6", domain: "concepts", type: "single",
-    q: "A firm keeps regulated data on-premises but bursts to Azure at peak load. Which deployment model is this?",
+    q: "An organization maintains regulated data on-premises and uses Azure to handle peak workloads. Which cloud deployment model is being used?",
     options: ["Public cloud", "Private cloud", "Hybrid cloud", "Community cloud"],
     correct: 2,
-    ex: "Hybrid combines on-premises/private infrastructure with public cloud so workloads can move between them." },
+    ex: "A hybrid cloud model combines on-premises infrastructure with public cloud services, enabling workloads to move between environments based on business and compliance requirements." },
   { id: "c7", domain: "concepts", type: "single",
-    q: "Serverless compute such as Azure Functions primarily provides which benefit?",
-    options: ["Full control of the host OS", "No infrastructure to manage, billed per execution", "A permanent dedicated VM", "Unlimited free compute"],
+    q: "Which benefit is most closely associated with serverless compute such as Azure Functions?",
+    options: ["Full control of the host operating system", "No infrastructure to manage and billing based on execution", "A permanent dedicated virtual machine", "Unlimited free compute"],
     correct: 1,
-    ex: "Serverless abstracts all infrastructure; you deploy code and pay only when it runs, scaling automatically." },
+    ex: "Serverless compute abstracts infrastructure management and charges customers only when code executes." },
   { id: "c8", domain: "concepts", type: "single",
-    q: "Which term means the ability to recover services after a major event such as a regional outage?",
+    q: "Which term describes the ability to restore services after a significant event such as a regional outage?",
     options: ["Elasticity", "Disaster recovery", "Agility", "Scalability"],
     correct: 1,
-    ex: "Disaster recovery restores services and data after a significant disruptive event." },
+    ex: "Disaster recovery is the process of restoring services and data after a major disruption or outage." },
   { id: "c9", domain: "concepts", type: "single",
-    q: "'Agility' as a cloud benefit primarily refers to:",
-    options: ["Lower total cost", "Rapidly provisioning and de-provisioning resources", "Higher network speed", "Stronger encryption"],
+    q: "Which statement best describes the cloud benefit of agility?",
+    options: ["Lower total cost", "Rapidly provisioning and deprovisioning resources", "Higher network speed", "Stronger encryption"],
     correct: 1,
-    ex: "Agility is the ability to deploy and retire resources quickly, so teams respond faster to changing needs." },
+    ex: "Agility refers to the ability to quickly deploy and retire resources in response to changing business needs." },
   { id: "c10", domain: "concepts", type: "multi",
-    q: "Which TWO are benefits typically associated with the public cloud? (Choose two.)",
-    options: ["No upfront hardware capacity planning", "You physically own the servers", "High, on-demand scalability", "Guaranteed zero cost"],
+    q: "Which TWO benefits are typically associated with the public cloud? (Choose two.)",
+    options: ["No upfront hardware capacity planning", "Ownership of physical servers", "High, on-demand scalability", "Guaranteed zero cost"],
     correct: [0, 2],
-    ex: "The public cloud removes upfront hardware planning and offers elastic scale. You never own the hardware and it is not free." },
+    ex: "The public cloud reduces the need for upfront hardware planning and provides elastic, on-demand scalability. Customers do not own the underlying hardware, and there is no guarantee of zero cost." },
   { id: "c11", domain: "concepts", type: "multi",
-    q: "Which TWO responsibilities always belong to the customer in every cloud service model? (Choose two.)",
+    q: "Which TWO responsibilities always remain with the customer in every cloud service model? (Choose two.)",
     options: ["Data and information", "Physical datacentre security", "Accounts and identities", "Physical host patching"],
     correct: [0, 2],
-    ex: "Data, and accounts/identities, always stay with the customer. Physical security and hosts are always Microsoft's." },
+    ex: "Customers remain responsible for protecting their data and managing accounts and identities. Physical datacentre security and host maintenance remain the provider's responsibility in all cloud service models." },
   { id: "c12", domain: "concepts", type: "yesno",
-    q: "For each statement about the shared responsibility model, select Yes if it is correct, otherwise No.",
+    q: "For each statement about the shared responsibility model, select Yes if the statement is correct. Otherwise, select No.",
     statements: [
-      { text: "In IaaS, the customer is responsible for the physical security of the datacentre.", ans: false },
-      { text: "In every service model, the customer is responsible for their data and identities.", ans: true },
-      { text: "In SaaS, the customer is responsible for patching the operating system.", ans: false },
+      { text: "In an Infrastructure as a Service (IaaS) environment, the customer is responsible for the physical security of the datacentre.", ans: false },
+      { text: "In every cloud service model, the customer is responsible for data and identities.", ans: true },
+      { text: "In a Software as a Service (SaaS) environment, the customer is responsible for patching the operating system.", ans: false },
     ],
-    ex: "Physical security is always Microsoft's. Data/identities are always the customer's. In SaaS, Microsoft patches the OS." },
+    ex: "Physical security is the provider's responsibility in every model. Customers remain responsible for their data and identities. In SaaS, the provider manages the operating system and its patching." },
   { id: "c13", domain: "concepts", type: "dragdrop",
     q: "Match each cloud service model to its description.",
     tokens: ["IaaS", "PaaS", "SaaS"],
@@ -183,127 +183,137 @@ const BANK = [
     ],
     ex: "Owning hardware is CapEx (upfront). Paying for cloud usage over time is OpEx (operating cost)." },
   { id: "c16", domain: "concepts", type: "single",
-    q: "Which statement best describes 'scalability' in the cloud?",
+    q: "Which statement best describes scalability in the cloud?",
     options: ["Recovering after an outage", "The ability to increase or decrease resources as needed", "Owning your own datacentre", "Encrypting data at rest"],
     correct: 1,
-    ex: "Scalability is the capacity to add (scale up/out) or reduce resources to meet demand." },
+    ex: "Scalability refers to the ability to increase or decrease resource capacity to meet demand." },
   { id: "c17", domain: "concepts", type: "single",
-    q: "Vertical scaling (scaling up) means:",
-    options: ["Adding more identical instances", "Increasing the resources (CPU/RAM) of an existing instance", "Moving to another region", "Reducing the number of instances"],
+    q: "Which statement best describes vertical scaling?",
+    options: ["Adding more identical instances", "Increasing the resources of an existing instance, such as CPU or memory", "Moving to another region", "Reducing the number of instances"],
     correct: 1,
-    ex: "Scaling up (vertical) adds power to an existing resource. Scaling out (horizontal) adds more instances." },
+    ex: "Vertical scaling increases the capacity of an existing resource, while horizontal scaling adds additional instances." },
   { id: "c18", domain: "concepts", type: "single",
-    q: "Which cloud model is dedicated to a single organization and may be hosted on-premises?",
+    q: "Which cloud deployment model is used exclusively by a single organization and may be hosted on-premises or in a dedicated datacentre?",
     options: ["Public cloud", "Private cloud", "Hybrid cloud", "Multi-tenant cloud"],
     correct: 1,
-    ex: "A private cloud is used by one organization exclusively, offering more control at higher cost." },
+    ex: "A private cloud is dedicated to a single organization and can be hosted on-premises or in a dedicated environment, providing greater control and isolation." },
 
   /* ---------- ARCHITECTURE & SERVICES ---------- */
   { id: "a1", domain: "architecture", type: "single",
-    q: "What is the logical container that holds related Azure resources sharing the same lifecycle?",
+    q: "Which Azure resource is the logical container for related resources that share the same lifecycle?",
     options: ["Management group", "Subscription", "Resource group", "Region"],
     correct: 2,
-    ex: "A resource group holds related resources. Every resource belongs to exactly one resource group." },
+    ex: "A resource group is the logical container for related Azure resources and is commonly used to manage their lifecycle together." },
   { id: "a2", domain: "architecture", type: "single",
-    q: "Which construct lets you apply governance and policy across MULTIPLE subscriptions at once?",
+    q: "Which Azure construct allows you to apply governance and policy to multiple subscriptions at the same time?",
     options: ["Resource group", "Management group", "Availability zone", "Region pair"],
     correct: 1,
-    ex: "Management groups sit above subscriptions, applying policy and RBAC across many subscriptions in a hierarchy." },
+    ex: "Management groups provide a governance layer above subscriptions and allow policy and access controls to be applied consistently across many subscriptions." },
   { id: "a3", domain: "architecture", type: "single",
     q: "Availability zones within a region primarily protect a workload against what?",
     options: ["Region-wide disasters", "The failure of a single datacentre in that region", "Subscription billing errors", "DNS misconfiguration"],
     correct: 1,
     ex: "Availability zones are physically separate datacentres inside one region, guarding against a single-datacentre failure." },
   { id: "a4", domain: "architecture", type: "single",
-    q: "Which service runs a managed Kubernetes cluster in Azure?",
+    q: "Which Azure service provides a managed Kubernetes environment for deploying and orchestrating containerized applications?",
     options: ["Azure Container Instances", "Azure Kubernetes Service (AKS)", "Azure App Service", "Azure Batch"],
     correct: 1,
-    ex: "AKS provides managed Kubernetes orchestration. Container Instances runs single containers without orchestration." },
+    ex: "Azure Kubernetes Service is a managed Kubernetes service that simplifies the deployment, scaling, and management of containerized workloads." },
   { id: "a5", domain: "architecture", type: "single",
-    q: "You need to host a web app without managing the OS or web server. Which service fits best?",
+    q: "You need to host a web application without managing the operating system or web server. Which Azure service should you use?",
     options: ["Azure Virtual Machines", "Azure App Service", "Azure Container Instances", "Azure Virtual Network"],
     correct: 1,
-    ex: "Azure App Service is PaaS for hosting web apps/APIs without managing the underlying OS or web server." },
+    ex: "Azure App Service is a Platform as a Service offering for hosting web applications and APIs without managing the underlying operating system or web server." },
   { id: "a6", domain: "architecture", type: "single",
-    q: "Which storage redundancy option replicates data across three availability zones in the primary region?",
+    q: "Which Azure Storage redundancy option replicates data across three availability zones in the primary region?",
     options: ["LRS", "ZRS", "GRS", "RA-GRS"],
     correct: 1,
-    ex: "ZRS replicates across three zones in the primary region. LRS stays in one datacentre; GRS copies to a second region." },
+    ex: "Zone-redundant storage replicates across three availability zones in the primary region. LRS copies within a single datacentre; GRS replicates to a secondary region." },
   { id: "a7", domain: "architecture", type: "single",
     q: "Which storage access tier is cheapest to store but most costly to access, for rarely-used data?",
     options: ["Hot", "Cool", "Cold", "Archive"],
     correct: 3,
     ex: "Archive has the lowest storage cost, highest access cost and latency; for long-term, rarely-read data." },
   { id: "a8", domain: "architecture", type: "single",
-    q: "Which service gives a private, dedicated connection to Azure that does NOT use the public internet?",
+    q: "Which Azure service provides a private connection to Azure that does not traverse the public internet?",
     options: ["VPN Gateway", "ExpressRoute", "Azure Bastion", "Application Gateway"],
     correct: 1,
-    ex: "ExpressRoute uses a connectivity provider for a private link, bypassing the public internet." },
+    ex: "ExpressRoute provides a private, dedicated connection between an on-premises network and Azure, without using the public internet." },
   { id: "a9", domain: "architecture", type: "single",
-    q: "What is Microsoft Entra ID (formerly Azure AD) mainly used for?",
+    q: "What is Microsoft Entra ID primarily used for?",
     options: ["Virtual machine hosting", "Identity and access management", "Object storage", "Load balancing"],
     correct: 1,
-    ex: "Entra ID is Microsoft's cloud identity service: authentication, SSO, Conditional Access and more." },
+    ex: "Microsoft Entra ID is used for identity and access management, including authentication, single sign-on, and Conditional Access." },
+  { id: "a9b", domain: "architecture", type: "single",
+    q: "Your organization plans to migrate an on-premises Active Directory environment to Azure. Which Microsoft service should you use to provide centralized identity and access management for cloud-based resources?",
+    options: ["Azure Backup", "Microsoft Entra ID", "Azure Monitor", "Azure Files"],
+    correct: 1,
+    ex: "Microsoft Entra ID provides centralized identity and access management for Microsoft cloud services and enables secure access to Azure resources." },
+  { id: "a9c", domain: "architecture", type: "single",
+    q: "Your company is migrating a large on-premises Active Directory forest to Azure. Which approach best supports identity services for a hybrid environment that includes Microsoft cloud-based applications and workloads?",
+    options: ["Deploy a standalone Azure VM for each user account", "Use Microsoft Entra ID to manage identities and access for cloud resources", "Store all identities in Azure Blob Storage", "Disable directory synchronization and create new accounts manually"],
+    correct: 1,
+    ex: "Microsoft Entra ID is designed for centralized identity management in Microsoft cloud environments and supports hybrid access scenarios for users and applications." },
   { id: "a10", domain: "architecture", type: "single",
     q: "The management layer that receives every request to create, update or delete Azure resources is:",
     options: ["Azure Monitor", "Azure Resource Manager (ARM)", "Azure Advisor", "Azure Policy"],
     correct: 1,
     ex: "ARM is the deployment/management layer; portal, CLI, PowerShell and SDKs all route requests through it." },
   { id: "a11", domain: "architecture", type: "single",
-    q: "You want VMs to scale out automatically when CPU rises. Which feature manages identical, load-balanced VMs?",
+    q: "You want virtual machines to scale out automatically when CPU utilization increases. Which Azure feature should you use?",
     options: ["Availability sets", "Virtual Machine Scale Sets", "Azure Functions", "Resource locks"],
     correct: 1,
-    ex: "VM Scale Sets deploy and autoscale a set of identical, load-balanced VMs based on demand." },
+    ex: "Virtual Machine Scale Sets are used to deploy and automatically scale identical, load-balanced virtual machines based on demand." },
   { id: "a12", domain: "architecture", type: "single",
-    q: "Which service distributes inbound network traffic across backend VMs at layer 4?",
+    q: "Which Azure service distributes inbound network traffic across multiple virtual machines at layer 4?",
     options: ["Azure DNS", "Azure Load Balancer", "VPN Gateway", "Azure Firewall"],
     correct: 1,
-    ex: "Azure Load Balancer operates at layer 4 (TCP/UDP), spreading traffic across healthy backends." },
+    ex: "Azure Load Balancer operates at layer 4 and distributes traffic across healthy backend resources." },
   { id: "a13", domain: "architecture", type: "single",
-    q: "A region pair is best described as:",
-    options: ["Two datacentres in one building", "Two regions in the same geography, 300+ miles apart, used for replication and staggered updates", "Two subscriptions linked for billing", "A primary and backup availability zone"],
+    q: "Which statement best describes an Azure region pair?",
+    options: ["Two datacentres in a single building for local redundancy", "Two Azure regions in the same geography, separated by at least 300 miles, used for replication and staggered platform updates", "Two subscriptions linked for billing and cost allocation", "A primary region and a backup availability zone within the same datacentre"],
     correct: 1,
-    ex: "Region pairs are two regions in a geography (~300+ miles apart) for replication and non-simultaneous platform updates." },
+    ex: "An Azure region pair consists of two regions within the same geography, separated by a significant distance to support disaster recovery and maintenance sequencing." },
   { id: "a14", domain: "architecture", type: "single",
-    q: "Which storage service is designed for large amounts of unstructured object data (images, video, backups)?",
+    q: "Which Azure Storage service is designed to store large amounts of unstructured data such as images, videos, and backups?",
     options: ["Azure Files", "Azure Blob Storage", "Azure Queue Storage", "Azure Table Storage"],
     correct: 1,
-    ex: "Blob Storage is optimized for unstructured object data. Azure Files offers managed SMB/NFS file shares." },
+    ex: "Azure Blob Storage is optimized for storing unstructured object data, including documents, media files, and backup data." },
   { id: "a15", domain: "architecture", type: "single",
-    q: "Which service provides managed file shares accessible over SMB and NFS?",
+    q: "Which Azure service provides managed file shares that are accessible by using SMB and NFS protocols?",
     options: ["Azure Blob Storage", "Azure Files", "Azure Disk Storage", "Azure Queue Storage"],
     correct: 1,
-    ex: "Azure Files delivers fully managed file shares in the cloud, reachable via SMB and NFS." },
+    ex: "Azure Files provides fully managed cloud file shares that can be accessed by using SMB and NFS." },
   { id: "a16", domain: "architecture", type: "single",
-    q: "The difference between authentication and authorization is:",
-    options: ["Authentication grants permissions; authorization proves identity", "Authentication proves who you are; authorization defines what you can access", "They are identical", "Authorization always happens first"],
+    q: "Which statement accurately describes the difference between authentication and authorization?",
+    options: ["Authentication grants permissions; authorization verifies identity", "Authentication verifies identity; authorization determines what an authenticated user can access", "Authentication and authorization are identical processes", "Authorization occurs before authentication in every Azure sign-in flow"],
     correct: 1,
-    ex: "AuthN verifies identity; AuthZ decides what that verified identity may do." },
+    ex: "Authentication confirms a user's identity, while authorization determines the permissions and access that the identity is allowed to use." },
   { id: "a17", domain: "architecture", type: "single",
-    q: "Multi-factor authentication (MFA) strengthens sign-in by requiring:",
-    options: ["Two passwords", "Two or more factors from different categories", "A longer single password", "Biometrics only"],
+    q: "Which statement best describes multi-factor authentication (MFA)?",
+    options: ["Two passwords are required for sign-in", "Two or more factors from different categories are required to authenticate", "A longer single password is required for each login", "Only biometric factors can be used for MFA"],
     correct: 1,
-    ex: "MFA needs factors from different categories: something you know, have, or are — not two of the same." },
+    ex: "MFA requires factors from different categories, such as something the user knows, possesses, or is, to strengthen authentication." },
   { id: "a18", domain: "architecture", type: "single",
-    q: "Which Entra ID feature applies access decisions based on signals like user, location, device and risk?",
+    q: "Which Microsoft Entra feature evaluates signals such as user location, device state, and sign-in risk before allowing access to a resource?",
     options: ["Conditional Access", "Resource locks", "Azure Policy", "Availability zones"],
     correct: 0,
-    ex: "Conditional Access enforces policies (e.g. require MFA) based on signals such as location, device and sign-in risk." },
+    ex: "Conditional Access applies access decisions based on conditions such as location, device compliance, and risk level." },
   { id: "a19", domain: "architecture", type: "single",
-    q: "Which service lets you securely connect to a VM without exposing RDP/SSH ports to the public internet?",
+    q: "Which Azure service enables secure remote access to a virtual machine without exposing RDP or SSH ports to the public internet?",
     options: ["Azure Bastion", "Azure DNS", "Azure Advisor", "Azure Monitor"],
     correct: 0,
-    ex: "Azure Bastion provides secure RDP/SSH connectivity to VMs directly in the portal, without public IPs on the VM." },
+    ex: "Azure Bastion provides secure browser-based connectivity to Azure virtual machines without requiring public IP addresses on those VMs." },
   { id: "a20", domain: "architecture", type: "multi",
     q: "Which TWO are valid Azure compute options for running containers? (Choose two.)",
     options: ["Azure Container Instances", "Azure Blob Storage", "Azure Kubernetes Service", "Azure DNS"],
     correct: [0, 2],
     ex: "ACI runs individual containers; AKS orchestrates them at scale. Blob and DNS are not compute." },
   { id: "a21", domain: "architecture", type: "multi",
-    q: "Which TWO options provide connectivity between an on-premises network and an Azure virtual network? (Choose two.)",
+    q: "Which TWO services provide connectivity between an on-premises network and an Azure virtual network? (Choose two.)",
     options: ["VPN Gateway", "Azure Blob Storage", "ExpressRoute", "Azure Advisor"],
     correct: [0, 2],
-    ex: "A VPN Gateway (over the internet) and ExpressRoute (private) both connect on-premises networks to Azure." },
+    ex: "A VPN Gateway provides encrypted connectivity over the internet, and ExpressRoute provides a private, dedicated connection between on-premises infrastructure and Azure." },
   { id: "a22", domain: "architecture", type: "dragdrop",
     q: "Match each Azure service to its category.",
     tokens: ["Azure Functions", "Blob Storage", "Virtual Network", "Microsoft Entra ID"],
@@ -365,52 +375,52 @@ const BANK = [
     correct: 0,
     ex: "Azure Virtual Desktop provides virtualized Windows desktops and applications hosted in Azure." },
   { id: "a30", domain: "architecture", type: "single",
-    q: "An availability set primarily protects VMs against:",
-    options: ["Region failures", "Hardware failures and planned maintenance within a datacentre", "Billing errors", "Expired certificates"],
+    q: "An availability set primarily helps protect virtual machines against:",
+    options: ["Region-wide failures", "Hardware failures and planned maintenance within a datacentre", "Billing errors", "Expired certificates"],
     correct: 1,
-    ex: "Availability sets spread VMs across fault and update domains, guarding against localized hardware faults and maintenance." },
+    ex: "Availability sets distribute virtual machines across fault and update domains to reduce the impact of localized hardware failures and maintenance events." },
 
   /* ---------- MANAGEMENT & GOVERNANCE ---------- */
   { id: "g1", domain: "governance", type: "single",
-    q: "Which tool estimates the cost of Azure services BEFORE you deploy them?",
+    q: "Which Azure tool estimates the cost of services before deployment?",
     options: ["Azure Advisor", "Azure Pricing Calculator", "Azure Monitor", "Cost Management + Billing"],
     correct: 1,
-    ex: "The Pricing Calculator estimates a planned configuration's cost. The TCO Calculator compares on-prem vs Azure." },
+    ex: "The Pricing Calculator estimates the cost of a planned Azure deployment. The TCO Calculator compares on-premises and Azure costs." },
   { id: "g2", domain: "governance", type: "single",
-    q: "Which tool compares the cost of running workloads on-premises versus in Azure?",
+    q: "Which Azure tool compares the cost of running workloads on-premises with the cost of running them in Azure?",
     options: ["Pricing Calculator", "Total Cost of Ownership (TCO) Calculator", "Azure Advisor", "Service Health"],
     correct: 1,
-    ex: "The TCO Calculator estimates savings from migrating existing on-premises workloads to Azure." },
+    ex: "The TCO Calculator estimates potential cost savings and benefits of migrating workloads from on-premises infrastructure to Azure." },
   { id: "g3", domain: "governance", type: "single",
-    q: "Which service gives personalized recommendations across cost, security, reliability, performance and operations?",
+    q: "Which Azure service provides personalized recommendations to improve cost, security, reliability, performance, and operational excellence?",
     options: ["Azure Monitor", "Azure Advisor", "Azure Policy", "Azure Blueprints"],
     correct: 1,
-    ex: "Azure Advisor analyzes usage and recommends improvements across five pillars including cost and security." },
+    ex: "Azure Advisor analyzes resource usage and provides recommendations to optimize cost, security, reliability, performance, and operational efficiency." },
   { id: "g4", domain: "governance", type: "single",
-    q: "You must ensure resources are only deployed to European regions. Which service enforces this?",
+    q: "Your organization requires all new Azure resources to be deployed only in European regions. Which Azure service should you use to enforce this requirement?",
     options: ["Azure Advisor", "Azure Policy", "Resource locks", "Azure Monitor"],
     correct: 1,
-    ex: "Azure Policy enforces standards at scale, including allowed locations, SKUs and required tags." },
+    ex: "Azure Policy allows you to define and enforce rules such as allowed locations, ensuring that resources are only deployed in approved regions." },
   { id: "g5", domain: "governance", type: "single",
-    q: "Which feature prevents a resource from being accidentally deleted or modified, regardless of RBAC?",
+    q: "Which Azure feature prevents a resource from being deleted or modified, regardless of role-based access control permissions?",
     options: ["Azure Policy", "Resource locks", "Tags", "Management groups"],
     correct: 1,
-    ex: "Resource locks (CanNotDelete or ReadOnly) protect resources from accidental changes, overriding RBAC permissions." },
+    ex: "Resource locks such as CanNotDelete or ReadOnly prevent accidental changes or deletion regardless of RBAC permissions." },
   { id: "g6", domain: "governance", type: "single",
     q: "What is the primary purpose of applying tags to Azure resources?",
-    options: ["To encrypt the resource", "To organize resources and enable cost allocation/reporting", "To boost performance", "To restrict deployment regions"],
+    options: ["To encrypt the resource", "To organize resources and support cost allocation and reporting", "To boost performance", "To restrict deployment regions"],
     correct: 1,
-    ex: "Tags are name/value metadata for organizing resources and grouping costs, e.g. by department or environment." },
+    ex: "Tags provide metadata that can be used to organize resources, identify ownership, and support cost allocation and reporting." },
   { id: "g7", domain: "governance", type: "single",
-    q: "Which service collects metrics and logs to help you understand resource performance and health?",
+    q: "Which Azure service collects metrics and logs to help you understand the performance and health of your resources?",
     options: ["Azure Monitor", "Azure Policy", "Azure Advisor", "Azure Blueprints"],
     correct: 0,
-    ex: "Azure Monitor gathers metrics and logs; Log Analytics queries them and Application Insights covers app performance." },
+    ex: "Azure Monitor collects metrics and logs that can be used to analyze performance, availability, and operational health." },
   { id: "g8", domain: "governance", type: "single",
-    q: "Where do you check for Azure platform outages and planned maintenance affecting your services?",
+    q: "Which Azure service provides information about service incidents, planned maintenance, and health advisories affecting your resources?",
     options: ["Azure Advisor", "Azure Service Health", "Azure Policy", "Cost Management"],
     correct: 1,
-    ex: "Azure Service Health provides personalized alerts on service issues, planned maintenance and advisories." },
+    ex: "Azure Service Health provides personalized alerts and information about Azure service issues, planned maintenance, and health advisories." },
   { id: "g9", domain: "governance", type: "single",
     q: "An Azure Service Level Agreement (SLA) defines:",
     options: ["The price of a service", "The guaranteed availability/performance commitment and remedies", "The number of regions", "The encryption standard"],
@@ -422,25 +432,25 @@ const BANK = [
     correct: 1,
     ex: "Preview features are for evaluation and usually have no SLA. Full SLAs apply once a service reaches general availability." },
   { id: "g11", domain: "governance", type: "single",
-    q: "Which service helps govern, classify and protect data across your estate for compliance?",
+    q: "Which Microsoft service helps an organization govern, classify, and protect data across its environment to support compliance and risk management?",
     options: ["Microsoft Purview", "Azure Monitor", "Azure Advisor", "Azure Bastion"],
     correct: 0,
-    ex: "Microsoft Purview provides unified data governance and compliance, including classification and data mapping." },
+    ex: "Microsoft Purview provides data governance, classification, and compliance capabilities across an organization's data estate." },
   { id: "g12", domain: "governance", type: "single",
-    q: "Which resource is the billing boundary that resource groups belong to?",
+    q: "Which Azure resource is the billing boundary for resources contained in a resource group?",
     options: ["Management group", "Subscription", "Region", "Tenant"],
     correct: 1,
-    ex: "A subscription is a billing and access boundary; resource groups (and their resources) live inside a subscription." },
+    ex: "A subscription is the billing and access boundary for resources; resource groups are created inside a subscription." },
   { id: "g13", domain: "governance", type: "single",
     q: "Where can you find Microsoft's audit reports and compliance documentation (ISO, SOC, etc.)?",
     options: ["Azure Advisor", "Microsoft Service Trust Portal / Trust Center", "Azure Monitor", "Cloud Shell"],
     correct: 1,
     ex: "The Service Trust Portal and Trust Center publish compliance offerings, audit reports and security documentation." },
   { id: "g14", domain: "governance", type: "single",
-    q: "Which approach grants a user least-privilege access to only the resources they need?",
+    q: "Which access model grants users the minimum permissions required to perform their job functions?",
     options: ["Assign everyone Owner", "Azure Role-Based Access Control (RBAC)", "Resource locks", "Tags"],
     correct: 1,
-    ex: "Azure RBAC assigns granular roles (Reader, Contributor, etc.) at a chosen scope to support least privilege." },
+    ex: "Azure RBAC enables least-privilege access by assigning specific roles to users, groups, or applications at a defined scope." },
   { id: "g15", domain: "governance", type: "single",
     q: "Azure Cloud Shell's key advantage is that it:",
     options: ["Provides a free VM", "Is a browser-based shell (Bash or PowerShell) needing no local install", "Gives unlimited storage", "Enforces policy automatically"],
@@ -452,10 +462,10 @@ const BANK = [
     correct: [0, 2],
     ex: "Azure CLI and Azure PowerShell are both command-line tools, also available inside Cloud Shell." },
   { id: "g17", domain: "governance", type: "multi",
-    q: "Which TWO capabilities does Microsoft Cost Management provide? (Choose two.)",
+    q: "Which TWO capabilities are provided by Microsoft Cost Management? (Choose two.)",
     options: ["Monitoring and analyzing Azure spend", "Enforcing allowed regions", "Setting budgets and alerts", "Scaling virtual machines"],
     correct: [0, 2],
-    ex: "Cost Management monitors/analyzes spend and sets budgets with alerts. Region enforcement is Azure Policy." },
+    ex: "Cost Management helps organizations monitor and analyze Azure spending and configure budgets with alerts. Enforcement of allowed regions is handled by Azure Policy." },
   { id: "g18", domain: "governance", type: "dragdrop",
     q: "Match each cost/governance tool to its purpose.",
     tokens: ["Pricing Calculator", "TCO Calculator", "Azure Advisor", "Azure Policy"],
@@ -492,15 +502,15 @@ const BANK = [
     ],
     ex: "App Insights = app performance. Service Health = personalized service issues. Advisor = recommendations, not billing." },
   { id: "g22", domain: "governance", type: "dropdown",
-    q: "Complete the sentence about cost tools.",
+    q: "Complete the sentence about Azure cost estimation tools.",
     parts: [
       { text: "Use the " },
       { options: ["Pricing Calculator", "TCO Calculator"], correct: 0 },
-      { text: " to estimate a planned deployment's cost, and the " },
+      { text: " to estimate the cost of a planned deployment, and the " },
       { options: ["Pricing Calculator", "TCO Calculator"], correct: 1 },
       { text: " to compare on-premises costs with Azure." },
     ],
-    ex: "Pricing Calculator estimates future Azure spend; TCO Calculator compares existing on-prem costs against Azure." },
+    ex: "The Pricing Calculator estimates the cost of planned Azure services, while the TCO Calculator compares on-premises costs with Azure." },
   { id: "g23", domain: "governance", type: "single",
     q: "Which built-in role gives full management access to a scope, including granting access to others?",
     options: ["Reader", "Contributor", "Owner", "Guest"],
@@ -981,51 +991,55 @@ function ExamRunner({ cfg, session, setSession, onSubmit }) {
   const a = answers[idx];
 
   return (
-    <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", color: E.text }}>
-      {/* top status bar */}
-      <div style={{ background: E.bar, color: E.barText, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "10px 16px", flexWrap: "wrap", gap: 8 }}>
-        <div style={{ fontSize: 13.5, fontWeight: 600 }}>Azure Fundamentals · {cfg.label}</div>
-        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <span style={{ fontSize: 13, opacity: 0.9 }}>Question {idx + 1} of {questions.length}</span>
-          <span style={{ fontFamily: mono, fontSize: 15, padding: "3px 10px", borderRadius: 5, fontWeight: 600,
-            background: crit ? "#c0392b" : low ? "#e0952b" : "rgba(255,255,255,.14)", color: "#fff" }}>
-            {fmtClock(secs)}
-          </span>
-        </div>
-      </div>
-      {/* progress hairline */}
-      <div style={{ height: 3, background: "#dfe4ec" }}>
-        <div className="bar" style={{ width: `${((idx + 1) / questions.length) * 100}%`, height: "100%", background: E.blue }} />
-      </div>
-
-      {/* question body */}
-      <div style={{ flex: 1, overflowY: "auto" }}>
-        <div className="fade" key={idx} style={{ maxWidth: 760, margin: "0 auto", padding: "26px 20px 40px" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14, flexWrap: "wrap" }}>
-            <span style={{ fontSize: 11.5, fontFamily: mono, color: E.blue, background: E.blueSoft, border: `1px solid #cfe0f5`, padding: "2px 8px", borderRadius: 4 }}>
-              Domain {DOMAINS[q.domain].short}
-            </span>
-            <span style={{ fontSize: 12.5, color: E.sub }}>{DOMAINS[q.domain].label}</span>
-            <span style={{ fontSize: 11.5, color: E.sub, marginLeft: "auto", fontFamily: mono, textTransform: "uppercase", letterSpacing: .5 }}>{typeLabel(q)}</span>
+    <div style={{ minHeight: "100vh", background: "linear-gradient(180deg, #dee6ef 0%, #eef2f7 100%)", color: E.text, padding: "20px 12px 30px" }}>
+      <div style={{ maxWidth: 980, margin: "0 auto", border: `1px solid ${E.border}`, boxShadow: "0 10px 30px rgba(14,28,52,.12)", background: "#f7f9fb", borderRadius: 10, overflow: "hidden" }}>
+        <div style={{ background: E.bar, color: E.barText, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "12px 18px", flexWrap: "wrap", gap: 10 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+            <div style={{ fontSize: 11.5, fontFamily: mono, letterSpacing: 1.5, opacity: 0.9 }}>AZ-900</div>
+            <div style={{ fontSize: 13.5, fontWeight: 600 }}>{cfg.label}</div>
           </div>
-
-          <QuestionBody q={q} a={a} setAnswer={setAnswer} />
+          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+            <span style={{ fontSize: 12.5, opacity: 0.9 }}>Question {idx + 1} of {questions.length}</span>
+            <span style={{ fontFamily: mono, fontSize: 15, padding: "4px 10px", borderRadius: 5, fontWeight: 700,
+              background: crit ? "#c0392b" : low ? "#e0952b" : "rgba(255,255,255,.14)", color: "#fff" }}>
+              {fmtClock(secs)}
+            </span>
+          </div>
         </div>
-      </div>
 
-      {/* bottom nav bar */}
-      <div style={{ borderTop: `1px solid ${E.border}`, background: E.pane }}>
-        <div style={{ maxWidth: 760, margin: "0 auto", padding: "12px 16px", display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
-          <label style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13.5, color: flags[idx] ? E.flag : E.sub, cursor: "pointer", padding: "6px 10px", borderRadius: 6, background: flags[idx] ? E.flagSoft : "transparent", border: `1px solid ${flags[idx] ? "#f0d29a" : "transparent"}` }}>
-            <input type="checkbox" checked={flags[idx]} onChange={toggleFlag} style={{ accentColor: E.flag }} />
-            {flags[idx] ? "Marked for review" : "Mark for review"}
-          </label>
-          <div style={{ flex: 1 }} />
-          <button onClick={() => go(idx - 1)} disabled={idx === 0} style={{ ...navBtn, opacity: idx === 0 ? 0.4 : 1 }}>‹ Previous</button>
-          <button onClick={() => setReviewing(true)} style={outlineBtn}>Review</button>
-          {idx < questions.length - 1
-            ? <button onClick={() => go(idx + 1)} style={fillBtn}>Next ›</button>
-            : <button onClick={() => setReviewing(true)} style={fillBtn}>End &amp; review</button>}
+        <div style={{ height: 4, background: "#dfe4ec" }}>
+          <div className="bar" style={{ width: `${((idx + 1) / questions.length) * 100}%`, height: "100%", background: E.blue }} />
+        </div>
+
+        <div style={{ background: "#f7f9fb", padding: "22px 18px 0" }}>
+          <div className="fade" key={idx} style={{ maxWidth: 820, margin: "0 auto", padding: "0 0 18px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 18, flexWrap: "wrap" }}>
+              <span style={{ fontSize: 11.5, fontFamily: mono, color: E.blue, background: E.blueSoft, border: `1px solid #cfe0f5`, padding: "3px 9px", borderRadius: 4, fontWeight: 700 }}>
+                Domain {DOMAINS[q.domain].short}
+              </span>
+              <span style={{ fontSize: 12.5, color: E.sub }}>{DOMAINS[q.domain].label}</span>
+              <span style={{ fontSize: 11.5, color: E.sub, marginLeft: "auto", fontFamily: mono, textTransform: "uppercase", letterSpacing: .5 }}>{typeLabel(q)}</span>
+            </div>
+
+            <div style={{ background: "#fff", border: `1px solid ${E.border}`, borderRadius: 10, padding: "20px 22px 18px", boxShadow: "0 2px 12px rgba(14,28,52,.04)" }}>
+              <QuestionBody q={q} a={a} setAnswer={setAnswer} />
+            </div>
+          </div>
+        </div>
+
+        <div style={{ borderTop: `1px solid ${E.border}`, background: "#f2f5f9" }}>
+          <div style={{ maxWidth: 820, margin: "0 auto", padding: "12px 14px 16px", display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
+            <label style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 13.5, color: flags[idx] ? E.flag : E.sub, cursor: "pointer", padding: "7px 10px", borderRadius: 6, background: flags[idx] ? E.flagSoft : "transparent", border: `1px solid ${flags[idx] ? "#f0d29a" : "transparent"}` }}>
+              <input type="checkbox" checked={flags[idx]} onChange={toggleFlag} style={{ accentColor: E.flag }} />
+              {flags[idx] ? "Marked for review" : "Mark for review"}
+            </label>
+            <div style={{ flex: 1 }} />
+            <button onClick={() => go(idx - 1)} disabled={idx === 0} style={{ ...navBtn, opacity: idx === 0 ? 0.4 : 1, minWidth: 118 }}>‹ Previous</button>
+            <button onClick={() => setReviewing(true)} style={{ ...outlineBtn, minWidth: 104 }}>Review</button>
+            {idx < questions.length - 1
+              ? <button onClick={() => go(idx + 1)} style={{ ...fillBtn, minWidth: 118 }}>Next ›</button>
+              : <button onClick={() => setReviewing(true)} style={{ ...fillBtn, minWidth: 150 }}>End &amp; review</button>}
+          </div>
         </div>
       </div>
     </div>
@@ -1053,13 +1067,20 @@ function ChoiceQ({ q, a, setAnswer }) {
   });
   return (
     <>
-      <h2 style={qStyle}>{q.q}</h2>
-      {multi && <p style={hintStyle}>Select {q.correct.length}.</p>}
-      <div style={{ display: "grid", gap: 9 }}>
+      <h2 style={{ ...qStyle, fontSize: 21, marginBottom: 18 }}>{q.q}</h2>
+      {multi && <p style={hintStyle}>Select {q.correct.length} options.</p>}
+      <div style={{ display: "grid", gap: 10 }}>
         {q.options.map((opt, i) => {
           const on = a.sel.includes(i);
           return (
-            <button key={i} onClick={() => toggle(i)} style={optStyle(on)}>
+            <button key={i} onClick={() => toggle(i)} style={{
+              ...optStyle(on),
+              minHeight: 52,
+              padding: "14px 16px",
+              fontSize: 16,
+              borderRadius: 8,
+              boxShadow: on ? "inset 0 0 0 1px rgba(0,103,192,.15)" : "none"
+            }}>
               <span style={optMark(on, multi)}>{on ? (multi ? "✓" : "●") : String.fromCharCode(65 + i)}</span>
               <span>{opt}</span>
             </button>
@@ -1143,7 +1164,6 @@ function DragQ({ q, a, setAnswer }) {
       <h2 style={qStyle}>{q.q}</h2>
       <p style={hintStyle}>Drag a term onto a slot, or tap a term then tap its slot. Tap a filled slot to clear it.</p>
 
-      {/* token pool */}
       <div style={{ display: "flex", flexWrap: "wrap", gap: 8, padding: "12px", border: `1px dashed ${E.borderStrong}`, borderRadius: 8, background: "#f7f9fc", minHeight: 52, marginBottom: 16 }}>
         {pool.length === 0 && <span style={{ color: E.sub, fontSize: 13 }}>All terms placed.</span>}
         {pool.map((t) => (
@@ -1157,7 +1177,7 @@ function DragQ({ q, a, setAnswer }) {
       </div>
 
       {/* targets */}
-      <div style={{ display: "grid", gap: 9 }}>
+      <div style={{ display: "grid", gap: 10 }}>
         {q.targets.map((t, ti) => {
           const val = a.map[ti];
           return (
@@ -1201,15 +1221,16 @@ function ReviewGrid({ questions, answers, flags, secs, low, crit, onJump, onBack
             <Legend c={E.sel} b={E.selBorder} t="Answered" />
             <Legend c={E.flagSoft} b="#f0d29a" t="Flagged" />
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(46px,1fr))", gap: 8 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(46px,1fr))", gap: 8 }}>
             {questions.map((q, i) => {
               const ans = isAnswered(q, answers[i]); const fl = flags[i];
               return (
                 <button key={i} onClick={() => onJump(i)} style={{
-                  aspectRatio: "1", borderRadius: 7, fontFamily: mono, fontSize: 14, fontWeight: 600,
+                  aspectRatio: "1", borderRadius: 7, fontFamily: mono, fontSize: 14, fontWeight: 700,
                   border: `1.5px solid ${fl ? "#e0952b" : ans ? E.selBorder : E.borderStrong}`,
                   background: fl ? E.flagSoft : ans ? E.sel : "#fff", color: fl ? "#9a6410" : ans ? "#0a3d6e" : E.sub,
                   position: "relative",
+                  boxShadow: fl ? "inset 0 0 0 1px rgba(224,149,43,.25)" : "none"
                 }}>{i + 1}{fl && <span style={{ position: "absolute", top: 2, right: 4, fontSize: 9 }}>⚑</span>}</button>
               );
             })}
